@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EZ-PO Purchase Order Creator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="container">
+    <header class="main-header">
+      <section class="main-logo">
+        <i
+          class="fa fa-tint fa-4x"
+          aria-hidden="true"
+          style="color: #4086d1"
+        ></i>
+        <h2>Pure Water Meters</h2>
+      </section>
+
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="">ADMIN</a>
+      </nav>
+
+      <div class="hamburger" onclick="openNav()">
+        <i class="fa-solid fa-bars fa-3x"></i>
+    </div>
+    </header>
+
+    <div id="myNav" class="overlay">
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <a href="index.html">HOME</a>
+        <a href="">ADMIN</a>
+      </div>
+  </div>
+
+    <main class="order-page">
+<section class="heading">
+      <h1>Pure Water Meters</h1>
+      <h2>Create Purchase Order</h2>
+    </section>
+
+      <section class="order-main-section1">
+        <form id="order-form">
+          <h3>Please Select a Meter and Configuration</h3>
+          <section class="form-elements">
+
+            <p>
+              <label for="customer_id">
+                <span>Enter Your Customer ID: </span>
+              </label>
+              <input type="text" id="customer_id" name="customer_id" />
+            </p>
+
+            <p>
+              <label for="po_number">
+                <span>Enter A PO Number: </span>
+              </label>
+              <input type="text" id="po_number" name="quantity" />
+            </p>
+
+          <p>
+            <label for="quantity">
+              <span>Enter Quantity: </span>
+            </label>
+            <input type="text" id="quantity" name="quantity" />
+          </p>         
+
+          <section id="meter-size">
+            <h4>Please Select A Meter</h4>
+            <select id="meter">
+              <!-- <option>Meter Choice</option>
+              <option value="58B">5/8in Brass</option>
+              <option value="100B">1in Brass</option>
+              <option value="58C">5/8in Composite</option>
+              <option value="34C">3/4in Composite</option>
+              <option value="100SS">1in Stainless Steel</option>
+              <option value="200SS">2in Stainless Steel</option>
+              <option value="400SS">4in Stainless Steel</option>
+              <option value="600SS">6in Stainless Steel</option>
+              <option value="800SS">12in Stainless Steel</option> -->
+            </select>
+          </section>
+
+          <section id="meter-type">
+            <h4>Select A Meter Type:</h4>
+            <select id="type">
+              <option>Meter Type</option>
+              <option value="RD">Radio</option>
+              <option value="EC">Encoded</option>
+              <option value="LD">Leak Detection</option>
+            </select>
+          </section>
+
+          <section id="meter-display">
+            <h5>Please Choose A Display:</h5>
+            <select id="display">
+              <option>Display</option>
+              <option value="101">0.000 Gallon Display</option>
+              <option value="240">00.00 Gallon Display</option>
+              <option value="320">0000 Gallon Display</option>
+            </select>
+          </section>
+
+          <section>
+            <h5>Please Choose A Time Zone:</h5>
+            <select id="timezone">
+              <option>Time Zone</option>
+              <option value="CT">Central Time Zone</option>
+              <option value="ET">Eastern Time Zone</option>
+              <option value="MT">Mountain Time Zone</option>
+              <option value="PT">Pacific Time Zone</option>
+            </select>
+          </section>
+          <button>ADD</button>
+        </section>
+        </form>
+      </section>
+        
+
+      <section id="purchase-order"></section>
+    </main>
+
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="order.js"></script>
+  </body>
+</html>

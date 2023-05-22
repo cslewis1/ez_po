@@ -1,0 +1,234 @@
+:root {
+    --primary-color: #4086d1;
+    --secondary-color: lightgray;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+}
+/* Header Styling */
+.main-header{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: space-between;
+}
+
+.main-logo{
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    text-align: center; 
+    align-items: center;  
+    justify-content: space-evenly;
+}
+
+.main-logo h2{
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bolder;
+    text-shadow: 2px 2px var(--primary-color);
+}
+
+nav{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;    
+}
+
+/* Main page styling */
+a{
+    text-decoration: none;
+}
+
+.home-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-section1{
+    display: flex;
+    height: 35vh;
+    width: 100%;
+    justify-content: center;
+}
+
+.main-section1 video{
+    width: 100%;
+    object-fit: cover;
+}
+
+.main-section1 img{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    background: radial-gradient(circle farthest-side, var(--secondary-color), var(--primary-color));
+    width: 100%;
+    height: 25vh;
+    text-align: center;
+    font-size: 50px;    
+}
+
+.trust{
+    font-style: italic;
+    text-shadow: 2px 2px grey;
+}
+
+.product-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-size: 30px;
+    background-color: var(--primary-color);
+}
+
+.product-header p{
+    font-size: 20px;
+}
+
+.products-section{
+    display: flex;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    height: 100vh;
+    justify-content: center;
+    gap: 50px;
+    margin: 3% 50px;
+}
+
+
+.products div{
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    width: 30%;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.products img{
+    height: 70%;
+    width: auto;
+}
+
+/* Order page styling */
+
+.heading{
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: var(--primary-color);
+    
+}
+
+.heading h1{
+    font-size: 40px;
+    font-style: italic;
+    text-shadow: 2px 2px grey;
+}
+
+
+.order-main-section1{
+    background-color: var(--secondary-color);
+    height: 20vh;
+    padding-top: 1.5%;
+}
+
+.order-main-section1 h4{
+    margin: 2;
+}
+
+form h3{
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.form-elements{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-elements p{
+    display: flex;
+    flex-direction: column;
+}
+
+/* @Neaka adding styling for hamburger nav menu*/
+  /* The Overlay (background) */
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    /* Stay in place */
+    z-index: 3;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #f1f1f1;
+  }
+
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+
+
+

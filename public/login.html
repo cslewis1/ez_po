@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>EZ-PO Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./login.css">
+
+
+</head>
+<body>
+  <header class="main-header">
+    <section class="main-logo">
+      <i
+        class="fa fa-tint fa-4x"
+        aria-hidden="true"
+        style="color: lightskyblue"
+      ></i>
+    </section>
+    <nav>
+      <a href="index.html" id="home">HOME</a>
+    </nav>
+  </header>
+
+<div id="login-form-wrap">
+  <h2>Login</h2>
+  <form id="login-form">
+    <p>
+      <input type="email" id="email" name="email" placeholder="Email Address" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="password" id="password" name="password" placeholder="Password" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="submit" id="login" value="Login">
+    </p>
+  </form>
+  <div id="create-account-wrap">
+    <p>Not a Partner? <a href="#">Request Access</a><p>
+  </div>
+</div>
+  
+</body>
+</html>
