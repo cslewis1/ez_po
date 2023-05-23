@@ -40,13 +40,4 @@ module.exports = {
     .catch((err) => console.log(err));
   },
   
-  getOrderOptions: (req, res) => {
-    sequelize
-      .query(`SELECT * from meter, configuration`)
-      .then((dbRes) => {
-        console.log(dbRes)
-        res.status(200).send(dbRes[0]);
-      })
-      .catch((err) => console.log(err));
-  }
 };

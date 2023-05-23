@@ -3,21 +3,10 @@ const getAllMeters = () => {
        .get('http://localhost:4000/meter')
         .then((res) => { 
           const meters = res.data
-            displayMeters(meters)
-            createLineOptions(meters)
+            createMeterDisplay(meters)           
         })
        .catch(errCallback);
 };
-
-const getAllConfigs = () => {
-    axios
-       .get('http://localhost:4000/configuration')
-        .then((res) => { 
-            const configs = res.data
-        })
-       .catch(errCallback);
-};
-
 
   
 //Hamburger button on Nav Bar
@@ -45,5 +34,6 @@ function openNav() {
       document.getElementById("myNav").style.width = "0%";
 }
 
-getAllConfigs()
-getOrderOptions()
+getAllMeters()
+
+

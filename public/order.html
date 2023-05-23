@@ -77,8 +77,8 @@
 
           <section id="meter-size">
             <h4>Please Select A Meter</h4>
-            <select id="meter">
-              <!-- <option>Meter Choice</option>
+            <select id="meterSelect">
+              <option>Meter Choice</option>
               <option value="58B">5/8in Brass</option>
               <option value="100B">1in Brass</option>
               <option value="58C">5/8in Composite</option>
@@ -87,38 +87,28 @@
               <option value="200SS">2in Stainless Steel</option>
               <option value="400SS">4in Stainless Steel</option>
               <option value="600SS">6in Stainless Steel</option>
-              <option value="800SS">12in Stainless Steel</option> -->
-            </select>
+              <option value="800SS">12in Stainless Steel</option>
+            </select>            
           </section>
 
-          <section id="meter-type">
+          <section id="type">
             <h4>Select A Meter Type:</h4>
-            <select id="type">
+            <select id="meterType">
               <option>Meter Type</option>
-              <option value="RD">Radio</option>
-              <option value="EC">Encoded</option>
-              <option value="LD">Leak Detection</option>
-            </select>
+             </select>
           </section>
 
           <section id="meter-display">
             <h5>Please Choose A Display:</h5>
             <select id="display">
-              <option>Display</option>
-              <option value="101">0.000 Gallon Display</option>
-              <option value="240">00.00 Gallon Display</option>
-              <option value="320">0000 Gallon Display</option>
+              <option>Display</option>             
             </select>
           </section>
 
           <section>
             <h5>Please Choose A Time Zone:</h5>
-            <select id="timezone">
+            <select id="timeZone">
               <option>Time Zone</option>
-              <option value="CT">Central Time Zone</option>
-              <option value="ET">Eastern Time Zone</option>
-              <option value="MT">Mountain Time Zone</option>
-              <option value="PT">Pacific Time Zone</option>
             </select>
           </section>
           <button>ADD</button>
@@ -130,8 +120,8 @@
       <section id="purchase-order"></section>
     </main>
 
-    <script src="../node_modules/axios/dist/axios.min.js"></script>
-    <script src="utils.js"></script>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>    
+   <script src="utils.js"></script>
     <script src="order.js"></script>
   </body>
 </html>
