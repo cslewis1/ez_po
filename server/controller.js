@@ -24,7 +24,11 @@ module.exports = {
 
   getAllOrders: (req, res) => {
     sequelize
-      .query(`select * from order`)
+      .query(
+        `select * from customer c
+      join order o on c.customer_id = o.customer_id
+      where c.customer_id = ${customerID}`
+      )
       .then((dbRes) => {
         res.status(200).send(dbRes[0]);
       })
@@ -33,22 +37,23 @@ module.exports = {
 
   getAllConfigs: (req, res) => {
     sequelize
-    .query(`select * from configuration`)
+      .query(`select * from configuration`)
       .then((dbRes) => {
-      res.status(200).send(dbRes[0]);
-    })
-    .catch((err) => console.log(err));
+        res.status(200).send(dbRes[0]);
+      })
+      .catch((err) => console.log(err));
   },
 
   getMeterPrice: (req, res) => {
-    const { pn } = req.params
-    sequelize.
-      query(`select meter_price from meter 
-    where part_number = '${pn}'`)
-    .then((dbRes) => {
-      res.status(200).send(dbRes[0]);
-    })
-    .catch((err) => console.log(err));
-  }
-  
+    const { pn } = req.params;
+    sequelize
+      .query(
+        `select meter_price, meter_name from meter 
+    where part_number = '${pn}'`
+      )
+      .then((dbRes) => {
+        res.status(200).send(dbRes[0]);
+      })
+      .catch((err) => console.log(err));
+  },
 };

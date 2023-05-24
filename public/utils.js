@@ -10,8 +10,6 @@ const getAllMeters = () => {
        .catch(errCallback);
 };
 
-
-
 //Hamburger button on Nav Bar
 var coll = document.getElementsByClassName("collapsible");
 var i;
