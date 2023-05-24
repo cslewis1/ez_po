@@ -1,3 +1,5 @@
+const errCallback = (err) => console.log(err);
+
 const getAllMeters = () => {
     axios
        .get('http://localhost:4000/meter')
@@ -8,7 +10,8 @@ const getAllMeters = () => {
        .catch(errCallback);
 };
 
-  
+
+
 //Hamburger button on Nav Bar
 var coll = document.getElementsByClassName("collapsible");
 var i;

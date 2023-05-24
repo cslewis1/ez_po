@@ -1,9 +1,8 @@
 
 const products = document.querySelector(".products");
 
-const errCallback = (err) => console.log(err.response.data);
 
-const createMeterDisplay = (arr) => {
+function createMeterDisplay(arr) {
   arr.forEach(meter => {
     const display = document.createElement("div");
   display.innerHTML = `<image alt='meter image' src='${meter.meter_image}' class='display'/>

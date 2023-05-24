@@ -7,7 +7,7 @@ const cors = require('cors')
 const {SERVER_PORT} = process.env
 const {seed} = require('./seed.js')
 
-const{getAllMeters, getAllOrders, getAllConfigs,} = require('./controller.js')
+const{getAllMeters, getAllOrders, getAllConfigs,getMeterPrice} = require('./controller.js')
 
 app.use(express.json())
 app.use(cors())
@@ -16,6 +16,9 @@ app.post('/seed', seed)
 app.get('/meter', getAllMeters)
 app.get('/order', getAllOrders)
 app.get('/configuration', getAllConfigs)
+
+
+app.get('/price/:pn', getMeterPrice)
 
 
 

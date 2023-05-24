@@ -39,5 +39,16 @@ module.exports = {
     })
     .catch((err) => console.log(err));
   },
+
+  getMeterPrice: (req, res) => {
+    const { pn } = req.params
+    sequelize.
+      query(`select meter_price from meter 
+    where part_number = '${pn}'`)
+    .then((dbRes) => {
+      res.status(200).send(dbRes[0]);
+    })
+    .catch((err) => console.log(err));
+  }
   
 };
