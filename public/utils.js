@@ -1,5 +1,13 @@
 const errCallback = (err) => console.log(err);
 
+
+//Get the date to store on the purchase order
+let currentDate = new Date();
+let cDay = currentDate.getDate();
+let cMonth = currentDate.getMonth() + 1;
+let cYear = currentDate.getFullYear();
+let date = `${cYear}-${cMonth}-${cDay}`;
+
 const getAllMeters = () => {
     axios
        .get('http://localhost:4000/meter')
@@ -34,6 +42,8 @@ function openNav() {
   function closeNav() {
       document.getElementById("myNav").style.width = "0%";
 }
+
+
 
 getAllMeters()
 

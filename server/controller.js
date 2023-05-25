@@ -23,12 +23,11 @@ module.exports = {
   },
 
   getAllOrders: (req, res) => {
-    sequelize
+   sequelize
       .query(
         `select * from customer c
-      join order o on c.customer_id = o.customer_id
-      where c.customer_id = ${customerID}`
-      )
+      join customer_order o on c.customer_id = o.customer_id
+      join meter m on m.meter_id = o.meter_id`)
       .then((dbRes) => {
         res.status(200).send(dbRes[0]);
       })
@@ -48,12 +47,33 @@ module.exports = {
     const { pn } = req.params;
     sequelize
       .query(
-        `select meter_price, meter_name from meter 
+        `select meter_price, meter_name, meter_id from meter 
     where part_number = '${pn}'`
       )
       .then((dbRes) => {
         res.status(200).send(dbRes[0]);
       })
+      .catch((err) => console.log(err));
+  },
+
+  inputOrder: (req, res) => {
+    const {
+      customerID,
+      poNumber,
+      date,
+      quantity,
+      meterSize,
+      config,
+      total,
+      discount,
+    } = req.body;
+
+    sequelize
+      .query(`insert into customer_order (customer_id, order_number, order_date, meter_qty, meter_id, config, order_total, discounted_total)
+    values(${customerID}, '${poNumber}', '${date}', ${quantity}, ${meterSize}, '${config}', ${total}, ${discount})
+    returning *`
+      )
+      .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((err) => console.log(err));
   },
 };

@@ -8,11 +8,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* 
+.hidden{
+  display: none;
+} */
 
 .container {
   width: 100%;
   height: 100vh;
-  
 }
 /* Header Styling */
 .main-header {
@@ -31,7 +34,7 @@
   justify-content: space-evenly;
 }
 
-.main-logo h2 {
+.main-logo h2, .thanks h1 {
   font-size: 30px;
   font-style: italic;
   font-weight: bolder;
@@ -39,7 +42,7 @@
 }
 
 nav {
-  width: 50%;
+  width: 30%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -49,7 +52,7 @@ nav {
 
 /* Main page styling */
 a {
-  text-decoration: none;  
+  text-decoration: none;
 }
 
 .home-page {
@@ -141,7 +144,40 @@ a {
   width: auto;
 }
 
+
 /* Order page styling */
+
+.complete{
+  background-image: url(images/drops.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.thanks{
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50%;
+  background: radial-gradient(
+    circle farthest-side,
+    var(--secondary-color),
+    lightblue
+  );
+  box-shadow: 0 0 15px 15px rgb(173, 216, 230);
+  margin:auto;  
+}
+
+.thanks p{
+  font-size: 25px;
+}
 
 .heading {
   height: 20vh;
@@ -184,11 +220,11 @@ form h3 {
   flex-direction: column;
 }
 
-.orderLineHeading{
+.orderLineHeading {
   text-align: center;
 }
 
-.orderLineSection{
+.orderLineSection {
   display: flex;
   justify-content: space-evenly;
   text-align: left;
@@ -196,21 +232,26 @@ form h3 {
   font-size: 20px;
   margin-bottom: 2%;
   margin-top: 1%;
-  
+  align-items: center;
 }
 
-.orderLineSection button{
-  padding: .2%;
+.orderLineSection button {
+  padding: 0.2%;
   font-weight: bolder;
   border: 2px solid black;
+  border-radius: 5px;
 }
 
-.line-break{
+.orderLineSection:nth-child(odd){
+  background-color: lightblue;
+}
+
+.line-break {
   border-bottom: 1px solid black;
-  width: 100%
+  width: 100%;
 }
 
-.line-header{
+.line-header {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -221,7 +262,7 @@ form h3 {
   width: 90%;
 }
 
-.line{  
+.line {
   display: flex;
   align-items: flex-start;
 }
@@ -280,6 +321,81 @@ form h3 {
   display: none;
 }
 
+/* Completed Order Styling *****************************************************/
+.po{
+  text-align: center;
+  margin-top: 2%;
+}
+
+#addresses {
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 2%;
+  height: 5%;
+  font-size: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vendor {
+  font-size: 20px;
+}
+
+#customerInfo{
+  width: 15%;
+}
+
+.custAddr{
+  width: 100%;
+  font-size: 20px;
+  margin-right: 20%;
+}
+
+.poInfo{
+  font-size: 20px;
+  margin-top: 5%;
+}
+
+table {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 3%;
+}
+
+td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.totals{ 
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 20%;
+  margin-top: 3%;
+}
+
+.saveSectios{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#save{
+  border: 2px solid black;
+  padding: .5%;
+  text-align: center;
+  background-color: lightblue;
+  font-weight: bolder;
+  border-radius: 5px;
+  margin-left: 50%;
+  margin-right: 50%auto;
+  margin-top: 2%;
+}
+
 
 /******************************************************************************/
 
@@ -314,7 +430,7 @@ form h3 {
     justify-content: space-evenly;
   }
 
-  .fa-solid fa-bars fa-3x{
+  .fa-solid fa-bars fa-3x {
     height: 1%;
   }
 
@@ -434,39 +550,37 @@ form h3 {
     gap: 10px;
     background-color: var(--primary-color);
   }
-  
+
   .heading h1 {
     font-size: 25px;
     font-style: italic;
     text-shadow: 2px 2px grey;
   }
 
-  .heading h2{
+  .heading h2 {
     font-size: 18px;
   }
-  
 
   .order-main-section1 {
     background-color: var(--secondary-color);
     height: 55vh;
     padding-top: 1.5%;
   }
-  
+
   .order-main-section1 h3 {
     margin: 2;
     font-size: 16px;
   }
-  
-  form{
+
+  form {
     display: flex;
     flex-direction: column;
-    
   }
   form h3 {
     text-align: center;
     margin-bottom: 2%;
   }
-  
+
   .form-elements {
     display: flex;
     flex-direction: column;
@@ -474,36 +588,56 @@ form h3 {
     font-weight: bolder;
     height: 50vh;
   }
-  
+
   .form-elements p {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
   }
 
-  .orderLineHeading{
+  .orderLineHeading {
     text-align: center;
-    margin-top: 2%;
+    margin-top: 2%;    
   }
 
-  #purchase-order{
-    display: flex;
-    flex-direction: column;    
-    width: 100vw;
-    justify-content: space-around;
-    margin-top: 5%;
+  .line-header{
+    font-size: 16px;
+    width: 100%;
   }
 
-  #purchase-order section{
+  .po{
+    font-size: 18px;
+  }
+
+  #addresses{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
     font-size: 12px;
   }
 
-  #purchase-order section button{
+  #purchase-order {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: space-around;
+    margin-top: 5%;
+    font-size: 16px;
+  }
+
+  #purchase-order div{
+    font-size: 16px;
+  }
+
+  #purchase-order section {
+    /* display: flex;
+    flex-direction: row; */
+    justify-content: space-evenly;
+    width: 100%;
+    font-size: 12px;
+  }
+
+  #purchase-order section button {
     width: 3%;
-    
   }
 }

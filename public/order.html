@@ -20,19 +20,18 @@
             aria-hidden="true"
             style="color: #4086d1"
           ></i>
-          </a>
+        </a>
         <h2>PURE Water Meters</h2>
       </section>
 
       <nav>
         <a href="index.html">HOME</a>  
         <a href="contact.html">CONTACT US</a>
-        <a href="login.html">PARTNER LOGIN</a>
       </nav>
 
       <div class="hamburger" onclick="openNav()">
         <i class="fa-solid fa-bars fa-3x"></i>
-    </div>
+      </div>
     </header>
 
     <div id="myNav" class="overlay">
@@ -42,21 +41,21 @@
       <!-- Overlay content -->
       <div class="overlay-content">
         <a href="index.html">HOME</a>
-        <a href="">ADMIN</a>
+        <a href="order.html">ORDER</a>
       </div>
-  </div>
+    </div>
 
     <main class="order-page">
-<section class="heading">
-      <h1>Pure Water Meters</h1>
-      <h2>Create Purchase Order</h2>
-    </section>
+      <section class="heading">
+        <h1>Pure Water Meters</h1>
+        <h2>Create Purchase Order</h2>
+      </section>
 
       <section class="order-main-section1">
         <form id="order-form">
+
           <h3>Please Select a Meter and Configuration</h3>
           <section class="form-elements">
-
             <p>
               <label for="customer_id">
                 <span>Enter Your Customer ID: </span>
@@ -98,7 +97,7 @@
             <h4>Select A Meter Type:</h4>
             <select id="meterType">
               <option value="">None</option>
-             </select>
+            </select>
           </section>
 
           <section id="meter-display" required>
@@ -114,11 +113,32 @@
               <option value="">None</option>
             </select>
           </section>
+          
           <button>ADD</button>
-        </section>
+          </section>
         </form>
       </section>
-        
+
+      <h2 class="po">Purchase Order</h2>
+
+      <section id="addresses">
+        <section id="pwAddress">
+          <p class="vendor">
+            <h3>Vendor:</h3>
+            Pure Water Meters<br>
+            1234 Water Meter Way <br>
+            Sandy Springs, GA 30327 <br>
+            Phone: (404)123-4567 <br>
+            Email: purewater@water.net
+          </p>
+          </section>
+          
+          <section id="customerAddress">
+            <h3>Shipping Address:</h3>
+            <div id="addAddress"></div>
+        </section>
+      </section>
+      
       <h3 class="orderLineHeading">Order Lines</h3>
 
       <section class="line-header">
@@ -136,6 +156,11 @@
       <div class="line-break"></div>
 
       <section id="purchase-order"></section>
+      <section id="poTotal"></section>   
+      
+        
+    <button id="save">Save Order</button>
+    
     </main>
 
     <script src="../node_modules/axios/dist/axios.min.js"></script>    
