@@ -92,7 +92,7 @@ displayOrderLines = async () => {
 
   let poTotal = document.querySelector('#poTotal')
  
-  poTotal.innerHTML = `${completeTotal}`
+ 
   
   
 const addAddress = document.querySelector('#addAddress')
